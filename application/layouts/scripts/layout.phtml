@@ -1,0 +1,54 @@
+<?php 
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('Supay');
+
+echo $this->doctype();
+
+$session = new Zend_Session_Namespace('systemSession');
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+        <?php echo $this->headTitle(); 
+        echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/main.css');
+        echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/print.css', 'supay');       	      
+        echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery-ui-1.8.13.custom.min.js', 'text/javascript');
+        ?>
+</head>
+
+<header class="clearFix">
+  <div class="wrap"> <a id="logo" href="#">Versionando con Supay</a>
+    <hr>
+    <nav>
+      <div id="nav">
+        <ul>
+          <li class="active"> <a href="#">Inicio</a> </li>
+          <li> <a href="<?php echo $this->url(
+					array(
+						'controller' => 'user',
+						'action'     => 'login'
+					), 'default', true) ?>">Ingresar</a> </li>
+          <li> <a href="<?php echo $this->url(
+					array(
+						'controller' => 'user',
+						'action'     => 'add'
+					), 'default', true) ?>">Registrarse</a> </li>
+          <li> <a href="#">Ayuda</a> </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<?php echo $this->layout()->content ?>
+
+<footer class="clearFix">
+  <div class="wrap clearFix">
+    <p class="floatRight"> Copyright &copy; 2012 <a href="#">Your Name</a> &ndash; All Rights Reserved<br>
+      Template by <a target="_blank" href="http://www.templatestar.net">Templatestar</a> &amp; <a target="_blank" href="http://www.os-templates.com/">OS Templates</a></p>
+    <p class="socialIcons"> <a href="#" class="rss">RSS</a> <a href="#" class="facebook">Facebook</a> <a href="#" class="twitter">Twitter</a> </p>
+  </div>
+</footer>
+</body>
+</html>

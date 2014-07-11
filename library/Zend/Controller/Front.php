@@ -968,8 +968,6 @@ class Zend_Controller_Front
             if ($this->throwExceptions()) {
                 throw $e;
             }
-            
-            
 
             $this->_response->setException($e);
         }

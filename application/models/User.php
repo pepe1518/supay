@@ -42,9 +42,9 @@ class App_Model_User {
     /**
      * @var string
      *
-     * @Column(name="rol", type="string", length=50, nullable=false)
+     * @Column(name="email", type="string", length=50, nullable=false)
      */
-    private $_rol;
+    private $_email;
 
     public function getId() {
         return $this->_id;
@@ -71,15 +71,15 @@ class App_Model_User {
     }
 
     public function setPassword($password) {
-        $this->_password = sha1($password);
+        $this->_password = $password;
     }
 
-    public function getRol() {
-        return $this->_rol;
+    public function getEmail() {
+        return $this->_email;
     }
 
-    public function setRol($rol) {
-        $this->_rol = $rol;
+    public function setEmail($email) {
+        $this->_email = $email;
     }
 
     public function toArray() {
@@ -92,7 +92,7 @@ class App_Model_User {
         $string = $string . "<br />id: " . $this->_nombre;
         $string = $string . "<br />username: " . $this->_username;
         $string = $string . "<br />password: " . $this->_password;
-        $string = $string . "<br />rol: " . $this->_rol;
+        $string = $string . "<br />email: " . $this->_email;
         $string = $string . "<br />}";
         return $string;
     }

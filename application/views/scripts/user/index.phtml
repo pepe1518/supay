@@ -1,4 +1,59 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>User</b> and script/action name <b>index</b></p>
+<?php echo $this->userMenu();  ?>
+
+<div id="content">
+  <div class="wrap clearFix">
+      <h2>Usuarios</h2>
+
+<a href='<?php echo $this->url(
+					array(
+						'controller' => 'user',
+						'action'     => 'add'
+					), 'default', true) ?>'>Registrar nuevo</a>
+
+<table>
+    <tr>
+	<th>Nombre</th>
+	<th>User Name</th>
+        <th>Email</th>
+	<th>&nbsp;</th>
+    </tr>
+
+	<?php 
+		foreach($this->dataList as $user)
+		{
+	?>
+		<tr>
+			<td><?php echo $user->getName(); ?></td>
+                        <td><?php echo $user->getUsername(); ?></td>
+			<td><?php echo $user->getEmail(); ?></td>
+			<td>
+				<a href='<?php echo $this->url(
+					array(
+						'controller' => 'user',
+						'action'     => 'view',
+						'id'     => $user->getId(),
+					), 'default', true) ?>'>Ver detalle</a>
+				<a href='<?php echo $this->url(
+					array(
+						'controller' => 'user',
+						'action'     => 'modify',
+						'id'     => $user->getId(),
+					), 'default', true) ?>'>Modificar</a>
+				<a href='<?php echo $this->url(
+					array(
+						'controller' => 'user',
+						'action'     => 'remove',
+						'id'     => $user->getId(),
+					), 'default', true) ?>'>Eliminar</a>
+			</td>
+		</tr>
+	<?php
+		} // End foreach
+	?>
+	
+</table>
+<?php
+echo $this->htmlPaginator;
+?>
+  </div>
 </div>

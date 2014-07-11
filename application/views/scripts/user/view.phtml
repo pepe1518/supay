@@ -1,0 +1,27 @@
+<h1>Detalle de usuario:</h1>
+
+<a href='<?php echo $this->url(
+					array(
+						'controller' => 'user',
+						'action'     => 'index'
+					), 'default', true) ?>'>Listado de usuarios</a>
+
+
+<table border='1'>
+	<tr>
+		<th>Usuario:</th>
+		<td><?php echo $this->user->getUsername(); ?></td>
+	</tr>
+	<tr>
+		<th>Contrasena:</th>
+		<td>****</td>
+	</tr>
+        <tr>
+            <th>Nombre:</th>
+            <td><?php echo $this->user->getName(); ?></td>
+        </tr>
+	<tr>
+		<th>Rol:</th>
+		<td><?php echo $this->user->getRol(); ?></td>
+	</tr>
+</table>

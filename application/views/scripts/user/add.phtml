@@ -1,0 +1,18 @@
+<?php echo $this->infoMenu(); 
+    
+?>
+<div id="content">    
+  <div class="wrap clearFix">
+      <?php echo $this->userMenu(); ?>
+<h2>Registrar usuario:</h2>
+
+<a href='<?php echo $this->url(
+					array(
+						'controller' => 'user',
+						'action'     => 'index'
+					), 'default', true) ?>'>Listado de usuarios</a>
+					
+
+<?php echo $this->form; ?>
+  </div>
+</div>

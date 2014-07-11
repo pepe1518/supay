@@ -1,9 +1,8 @@
 <?php
 
-class App_Form_User extends Zend_Form
+class App_Form_UserForm extends Zend_Form
 {
-
-   public function __construct()
+    public function __construct()
 	{
 		parent::__construct();
 		
@@ -21,14 +20,14 @@ class App_Form_User extends Zend_Form
                 $name->setLabel('Nombre:');
                 $name->setRequired(true);
                 
-                $rol = new Zend_Form_Element_Text('_rol');
-		$rol->setLabel("Rol:");
-		$rol->setRequired(true);
+                $email = new Zend_Form_Element_Text('_email');
+		$email->setLabel("E-mail:");
+		$email->setRequired(true);
 
                 
 		// Submit button
 		$submit = new Zend_Form_Element_Submit('submit', array('label' => 'GUARDAR'));
 		
-		$this->addElements(array($name, $username, $password, $rol, $submit));
+		$this->addElements(array($name, $username, $password, $email, $submit));
 	}	
 }

@@ -60,3 +60,4 @@ class App_Dao_UserDao {
 	}
 
 }
+?>
