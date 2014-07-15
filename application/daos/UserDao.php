@@ -38,7 +38,7 @@ class App_Dao_UserDao {
 	}
 
 	public function getByUsernamePassword($username, $password) {
-		$query = $this->_entityManager->createQuery("SELECT u FROM App_Model_User u WHERE u.username = '" . $username . "' and u.password'" . $password . "'");
+		$query = $this->_entityManager->createQuery("SELECT u FROM App_Model_User u WHERE u._username = '" . $username . "' and u._password LIKE'" . $password . "'");
 		$arrayResult = $query->getResult();
 
 		if ($arrayResult != null) {

@@ -127,20 +127,21 @@ class UserController extends Zend_Controller_Action
 
 		if ($this->getRequest()->isPost()) {
 			if ($form->isValid($_POST)) {
-				$username = $form->getValue("_username");
-				$password = $form->getValue("_password");                          
+				$nombreUsuario = $form->getValue("_username");
+				$password = $form->getValue("_password");
 
-				$authAdapter = new Zend_Auth_Adapter_DbTable(Zend_Db_Table::getDefaultAdapter(), 'user', 'username',  'password');
-                                $authAdapter->setIdentityColumn('username')->setCredentialColumn('password');
-    				$authAdapter->setIdentity($username)->setCredential($password);
- 
+				$authAdapter = new Zend_Auth_Adapter_DbTable(Zend_Db_Table::getDefaultAdapter(), 'user', 'username', 'password');
+				$authAdapter->setIdentityColumn('username')->setCredentialColumn('password');
+				$authAdapter->setIdentity($nombreUsuario)->setCredential($password);
+                                
+				
 				$auth = Zend_Auth::getInstance();
 				$result = $auth->authenticate($authAdapter);
 				if ($result->isValid()) {
 					$storage = $auth->getStorage();
 					//Aqui se guarda el objeto de session
 					$userDao = new App_Dao_UserDao();
-					$usuarioAuthenticado = $userDao->getByUsernamePassword($username, $password);
+					$usuarioAuthenticado = $userDao->getByUsernamePassword($nombreUsuario, $password);
 					$storage->write($usuarioAuthenticado);
 					$this->_redirect($_SERVER['HTTP_REFERER']);
 				} else {
