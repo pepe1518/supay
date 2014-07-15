@@ -1,4 +1,6 @@
-<h1>Detalle de usuario:</h1>
+<div id="content">
+  <div class="wrap clearFix">
+<h2>Detalle de usuario:</h2>
 
 <a href='<?php echo $this->url(
 					array(
@@ -12,16 +14,14 @@
 		<th>Usuario:</th>
 		<td><?php echo $this->user->getUsername(); ?></td>
 	</tr>
-	<tr>
-		<th>Contrasena:</th>
-		<td>****</td>
-	</tr>
         <tr>
             <th>Nombre:</th>
             <td><?php echo $this->user->getName(); ?></td>
         </tr>
 	<tr>
-		<th>Rol:</th>
-		<td><?php echo $this->user->getRol(); ?></td>
+		<th>Email:</th>
+		<td><?php echo $this->user->getEmail(); ?></td>
 	</tr>
 </table>
+  </div>
+</div>

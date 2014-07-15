@@ -127,13 +127,13 @@ class UserController extends Zend_Controller_Action
 
 		if ($this->getRequest()->isPost()) {
 			if ($form->isValid($_POST)) {
-				$username = $form->getValue("username");
-				$password = $form->getValue("password");
+				$username = $form->getValue("_username");
+				$password = $form->getValue("_password");                          
 
-				$authAdapter = new Zend_Auth_Adapter_DbTable(Zend_Db_Table::getDefaultAdapter(), 'name', 'username', 'password');
-				$authAdapter->setIdentityColumn('username')->setCredentialColumn('password');
-				$authAdapter->setIdentity($username)->setCredential($password);
-				
+				$authAdapter = new Zend_Auth_Adapter_DbTable(Zend_Db_Table::getDefaultAdapter(), 'user', 'username',  'password');
+                                $authAdapter->setIdentityColumn('username')->setCredentialColumn('password');
+    				$authAdapter->setIdentity($username)->setCredential($password);
+ 
 				$auth = Zend_Auth::getInstance();
 				$result = $auth->authenticate($authAdapter);
 				if ($result->isValid()) {

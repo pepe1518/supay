@@ -13,8 +13,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	
     protected function _initResourceLoader()
     {
-		$this->_resourceLoader->addResourceType('dao', 'daos/', 'Dao');
-		$this->_resourceLoader->addResourceType('util', 'utils/', 'Util');
+	$this->_resourceLoader->addResourceType('dao', 'daos/', 'Dao');
+	$this->_resourceLoader->addResourceType('util', 'utils/', 'Util');
+        $this->_resourceLoader->addResourceType('glip', 'glip/', 'Glip');        
     }
 	
     /**
