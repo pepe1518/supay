@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Test
+ * User
  *
  * @Entity
  * @Table(name="user")

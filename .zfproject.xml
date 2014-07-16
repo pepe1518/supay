@@ -22,6 +22,8 @@
       <layoutsDirectory enabled="false"/>
       <modelsDirectory>
         <modelFile modelName="User"/>
+        <modelFile modelName="Project"/>
+        <modelFile modelName="Branch"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
