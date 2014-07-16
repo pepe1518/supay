@@ -50,7 +50,7 @@ class App_Model_Project
     
     /**
      * 
-     * @OneToMany(targetEntity="App_Model_Barch", mappedBy="_project", cascade={"all"})
+     * @OneToMany(targetEntity="App_Model_Branch", mappedBy="_project", cascade={"all"})
      */
     private $_branchs;
     

@@ -1,0 +1,8 @@
+<?php echo $this->infoMenu(); ?>
+<div id="content">
+  <div class="wrap clearFix">
+      <?php echo $this->userMenu();  ?>
+      <h2>Mis Proyectos</h2>
+      <?php echo Zend_Auth::getInstance()->getIdentity(); ?>
+  </div>
+</div>

@@ -143,7 +143,7 @@ class UserController extends Zend_Controller_Action
 					$userDao = new App_Dao_UserDao();
 					$usuarioAuthenticado = $userDao->getByUsernamePassword($nombreUsuario, $password);
 					$storage->write($usuarioAuthenticado);
-					$this->_redirect($_SERVER['HTTP_REFERER']);
+					$this->_redirect('/project/index');
 				} else {
 					$this->view->errorMessage = "Invalid username or password. Please try again.";
 				}

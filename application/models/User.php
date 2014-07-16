@@ -89,7 +89,7 @@ class App_Model_User {
     public function __toString() {
         $string = "User: {";
         $string = $string . "<br />id: " . $this->_id;
-        $string = $string . "<br />id: " . $this->_nombre;
+        $string = $string . "<br />name: " . $this->_name;
         $string = $string . "<br />username: " . $this->_username;
         $string = $string . "<br />password: " . $this->_password;
         $string = $string . "<br />email: " . $this->_email;
