@@ -53,6 +53,12 @@ class App_Model_Project
      * @OneToMany(targetEntity="App_Model_Branch", mappedBy="_project", cascade={"all"})
      */
     private $_branchs;
+    /**
+     * @var string
+     * 
+     * @Column(name="path_file", type="string", length=200, nullable=true)
+     */
+    private $_path;
     
     public function __construct() {
         $this->_orderItems = array();
@@ -81,6 +87,14 @@ class App_Model_Project
     public function setOwner(App_Model_Owner $owner) {
         $this->_owner = $owner;
     }
+    
+    public function getPath() {
+        return $this->_path;
+    }
+    public function setPath($path) {
+        $this->_path = $path;
+    }
+    
     public function toArray()
     {
 	return get_object_vars($this);		
