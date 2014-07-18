@@ -57,7 +57,7 @@ class GitCommit extends GitObject
 
     public function __construct($repo)
     {
-	parent::__construct($repo, Git::OBJ_COMMIT);
+	parent::__construct($repo, App_Glip_Git::OBJ_COMMIT);
     }
 
     public function _unserialize($data)

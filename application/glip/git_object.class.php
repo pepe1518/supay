@@ -52,11 +52,11 @@ class GitObject
      */
     static public function create($repo, $type)
     {
-	if ($type == Git::OBJ_COMMIT)
+	if ($type == App_Glip_Git::OBJ_COMMIT)
 	    return new GitCommit($repo);
-	if ($type == Git::OBJ_TREE)
+	if ($type == App_Glip_Git::OBJ_TREE)
 	    return new GitTree($repo);
-	if ($type == Git::OBJ_BLOB)
+	if ($type == App_Glip_Git::OBJ_BLOB)
 	    return new GitBlob($repo);
 	throw new Exception(sprintf('unhandled object type %d', $type));
     }
@@ -71,7 +71,7 @@ class GitObject
     protected function hash($data)
     {
 	$hash = hash_init('sha1');
-	hash_update($hash, Git::getTypeName($this->type));
+	hash_update($hash, App_Glip_Git::getTypeName($this->type));
 	hash_update($hash, ' ');
 	hash_update($hash, strlen($data));
 	hash_update($hash, "\0");

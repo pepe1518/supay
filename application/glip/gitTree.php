@@ -23,13 +23,13 @@ class GitTreeInvalidPathError extends GitTreeError {}
 
 require_once('git_object.class.php');
 
-class GitTree extends GitObject
+class App_Glip_GitTree extends GitObject
 {
     public $nodes = array();
 
     public function __construct($repo)
     {
-	parent::__construct($repo, Git::OBJ_TREE);
+	parent::__construct($repo, App_Glip_Git::OBJ_TREE);
     }
 
     public function _unserialize($data)

@@ -23,7 +23,7 @@ require_once('git_object.class.php');
 require_once('git_blob.class.php');
 require_once('git_commit.class.php');
 require_once('git_commit_stamp.class.php');
-require_once('git_tree.class.php');
+require_once('gitTree.php');
 
 /**
  * @relates Git
@@ -49,7 +49,7 @@ function sha1_hex($bin)
     return bin2hex($bin);
 }
 
-class Git
+class App_Glip_Git
 {
     public $dir;
 
@@ -64,25 +64,25 @@ class Git
     static public function getTypeID($name)
     {
 	if ($name == 'commit')
-	    return Git::OBJ_COMMIT;
+	    return App_Glip_Git::OBJ_COMMIT;
 	else if ($name == 'tree')
-	    return Git::OBJ_TREE;
+	    return App_Glip_Git::OBJ_TREE;
 	else if ($name == 'blob')
-	    return Git::OBJ_BLOB;
+	    return App_Glip_Git::OBJ_BLOB;
 	else if ($name == 'tag')
-	    return Git::OBJ_TAG;
+	    return App_Glip_Git::OBJ_TAG;
 	throw new Exception(sprintf('unknown type name: %s', $name));
     }
 
     static public function getTypeName($type)
     {
-	if ($type == Git::OBJ_COMMIT)
+	if ($type == App_Glip_Git::OBJ_COMMIT)
 	    return 'commit';
-	else if ($type == Git::OBJ_TREE)
+	else if ($type == App_Glip_Git::OBJ_TREE)
 	    return 'tree';
-	else if ($type == Git::OBJ_BLOB)
+	else if ($type == App_Glip_Git::OBJ_BLOB)
 	    return 'blob';
-	else if ($type == Git::OBJ_TAG)
+	else if ($type == App_Glip_Git::OBJ_TAG)
 	    return 'tag';
 	throw new Exception(sprintf('no string representation of type %d', $type));
     }
@@ -362,7 +362,7 @@ class Git
             list($hdr, $object_data) = explode("\0", gzuncompress(file_get_contents($path)), 2);
 
 	    sscanf($hdr, "%s %d", $type, $object_size);
-	    $object_type = Git::getTypeID($type);
+	    $object_type = App_GLip_Git::getTypeID($type);
             $r = array($object_type, $object_data);
 	}
 	else if ($x = $this->findPackedObject($object_name))
