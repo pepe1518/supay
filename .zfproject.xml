@@ -16,6 +16,7 @@
         </controllerFile>
         <controllerFile controllerName="Project">
           <actionMethod actionName="index"/>
+          <actionMethod actionName="add"/>
         </controllerFile>
       </controllersDirectory>
       <formsDirectory>
@@ -43,6 +44,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Project">
             <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Project">
+            <viewScriptFile forActionName="add"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
@@ -86,6 +90,7 @@
           </testApplicationControllerFile>
           <testApplicationControllerFile forControllerName="Project">
             <testApplicationActionMethod forActionName="index"/>
+            <testApplicationActionMethod forActionName="add"/>
           </testApplicationControllerFile>
         </testApplicationControllerDirectory>
       </testApplicationDirectory>

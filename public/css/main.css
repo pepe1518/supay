@@ -116,6 +116,7 @@ footer .socialIcons a.twitter{background:url("img/small-twitter.png") no-repeat;
 *******************************************************************************************************************/
 .wrap{margin:0 auto; position:relative; max-width:940px; padding:0 10px;}
 .col{width:48%; position:relative; margin-bottom:10px;}
+.colCenter{width: 48%: position:relative; margin-bottom:20px;}
 .col h3, .col p{padding-left:60px;}
 .col .icon{position:absolute; top:0; left:0; padding:0;}
 .buttonCentered{text-align:center; margin-bottom:30px;}

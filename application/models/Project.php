@@ -18,7 +18,7 @@ class App_Model_Project
     /**
      * @var integer
      * 
-     * @Column(name="ig_git", type="integer", nullable=false)
+     * @Column(name="id_git", type="integer", nullable=false)
      */
     private $_idGit;
 

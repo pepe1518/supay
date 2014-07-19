@@ -1,6 +1,6 @@
 <?php
 
-class App_Model_ProjectDao {
+class App_Dao_ProjectDao {
     private $_entityManager;
     
     public function __construct() {
@@ -28,7 +28,7 @@ class App_Model_ProjectDao {
     }
     
     public function getByOwner($idOwner) {
-        $query = $this->_entityManager->createquery("SELECT p FROM App_Model_Project p WHERE p.id_user = '" . $idOwner . "'");
+        $query = $this->_entityManager->createquery("SELECT p FROM App_Model_Project p WHERE p._owner = '" . $idOwner . "'");
         return $query->getResult();
     }
 }
