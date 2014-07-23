@@ -1,0 +1,14 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{3}{section.1}
+\contentsline {section}{\numberline {2}Antecedentes}{3}{section.2}
+\contentsline {section}{\numberline {3}Justificaci\IeC {\'o}n}{4}{section.3}
+\contentsline {section}{\numberline {4}Planteamiento del problema}{5}{section.4}
+\contentsline {section}{\numberline {5}Formulaci\IeC {\'o}n del Problema}{5}{section.5}
+\contentsline {section}{\numberline {6}Objetivos}{5}{section.6}
+\contentsline {subsection}{\numberline {6.1}Objetivo General}{5}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Objetivos Espec\IeC {\'\i }ficos}{5}{subsection.6.2}
+\contentsline {section}{\numberline {7}Hip\IeC {\'o}tesis o Idea a Defender o preguntas cient\IeC {\'\i }ficas y Tareas de investigaci\IeC {\'o}n}{6}{section.7}
+\contentsline {section}{\numberline {8}Novedad y aporte cient\IeC {\'\i }fico}{6}{section.8}
+\contentsline {section}{\numberline {9}Dise\IeC {\~n}o metodol\IeC {\'o}gico y te\IeC {\'o}rico}{6}{section.9}
+\contentsline {section}{\numberline {10}Desarrollo del proyecto}{7}{section.10}
+\contentsline {section}{\numberline {11}Conclusiones y recomendaciones}{9}{section.11}
