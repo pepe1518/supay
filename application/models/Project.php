@@ -59,9 +59,16 @@ class App_Model_Project
      * @Column(name="path_file", type="string", length=200, nullable=true)
      */
     private $_path;
+	/**
+	 * @var array
+	 * 
+	 * @OneToMany(targetEntity="App_Model_User", mappedBy="_project", cascade={"all"})
+	 */
+	 private $_users;
     
     public function __construct() {
-        $this->_orderItems = array();
+        $this->_branchs = array();
+		$this->_users = array();
     }
 
     /**

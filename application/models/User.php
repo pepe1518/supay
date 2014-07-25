@@ -45,6 +45,13 @@ class App_Model_User {
      * @Column(name="email", type="string", length=50, nullable=false)
      */
     private $_email;
+	
+	/**
+	 * @ManyToOne(targetEntity="App_Model_Project", inversedBy="_users", fetch="EAGER")
+	 * @JoinColumn(name="project_id", referencedColumnName="id") 
+	 */
+	 private $_project;
+
 
     public function getId() {
         return $this->_id;

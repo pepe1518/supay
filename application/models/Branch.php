@@ -20,7 +20,7 @@ class App_Model_Branch
     * @var App_Model_Project
     * 
     * @ManyToOne(targetEntity="App_Model_Project", fetch="EAGER")
-    * @JoinColumn(name="branch_id", referencedColumnName="id")
+    * @JoinColumn(name="project_id", referencedColumnName="id")
     */
     private $_project;
     
@@ -41,7 +41,7 @@ class App_Model_Branch
     /**
      * @var datetime
      * 
-     * @Column(name="reaction_date", type="datetime", nullable=true)
+     * @Column(name="creaction_date", type="datetime", nullable=true)
      */
     private $_creationDate;
     
