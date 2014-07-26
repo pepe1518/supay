@@ -32,7 +32,7 @@ class App_Model_Project
      * @var App_Model_User
      * 
      * @ManyToOne(targetEntity="App_Model_User", fetch="EAGER")
-     * @joinColumn(name="id_user", referencedColumnName="id", nullable=true)
+     * @joinColumn(name="user_id", referencedColumnName="id", nullable=true)
      */
     private $_owner;
     /**
@@ -59,16 +59,11 @@ class App_Model_Project
      * @Column(name="path_file", type="string", length=200, nullable=true)
      */
     private $_path;
-	/**
-	 * @var array
-	 * 
-	 * @OneToMany(targetEntity="App_Model_User", mappedBy="_project", cascade={"all"})
-	 */
-	 private $_users;
+
     
-    public function __construct() {
+   public function __construct() {
         $this->_branchs = array();
-		$this->_users = array();
+
     }
 
     /**

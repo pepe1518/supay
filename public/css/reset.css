@@ -15,7 +15,7 @@ small{font-size:0.9em;}
 .hidden{display:none;}
 .floatLeft{float:left !important;}
 .floatRight{float:right !important;}
-.floatCenter{float:center !important}
+.floatCenter{width:98% !important;}
 .bold{font-weight:bold !important;}
 .small{font-size:0.9em !important;}
 .large{font-size:1.1em !important;}

@@ -28,6 +28,7 @@
         <modelFile modelName="User"/>
         <modelFile modelName="Project"/>
         <modelFile modelName="Branch"/>
+        <modelFile modelName="Permission"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
