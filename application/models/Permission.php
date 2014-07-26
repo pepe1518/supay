@@ -49,6 +49,14 @@ class App_Model_Permission
 	 	$this->_access = $access;
 	 }
 	 
+	 public function getProject() {
+	 	return $this->_project;
+	 }
+	 
+	 public function getUser() {
+	 	return $this->_user;
+	 }
+	 
 	 public function toArray() {
 	 	return get_object_vars($this);
 	 }

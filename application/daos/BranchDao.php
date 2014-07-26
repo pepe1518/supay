@@ -16,6 +16,4 @@ class App_Dao_BranchDao {
 		$this->_entityManager->remove($branch);
 		$this->_entityManager->flush();
 	}
-	
-	
 }
