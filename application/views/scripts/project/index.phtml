@@ -14,7 +14,9 @@
       		</tr>
       	</thead>
       	<?php
-      		foreach($this->projects as $project) {
+      		if($this->allPermissions){
+      		foreach($this->allPermissions as $permission) {
+      			$project = $permission->getProject();
       	?>
       	<tr>
       		<td><?php echo $project->getId(); ?></td>
@@ -25,8 +27,7 @@
       		<td><?php echo $project->getDescription(); ?></td>
       		<td>aqui vienen las acciones</td>
       	</tr>      	
-      	<?php } //end foreach ?>
+      	<?php  } } //end foreach ?>
       </table>
-      <h2>proyecto en los que colaboro</h2>
   </div>
 </div>

@@ -86,7 +86,7 @@ class App_Model_Project
     public function getOwner() {
         return $this->_owner;
     }
-    public function setOwner(App_Model_Owner $owner) {
+    public function setOwner(App_Model_User $owner) {
         $this->_owner = $owner;
     }
     

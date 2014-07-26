@@ -2,7 +2,7 @@
 class App_Dao_PermissionDao {
 	private $_entityManager;
 	
-	public function __contruct() {
+	public function __construct() {
 		$registry = Zend_Registry::getInstance();
 		$this->_entityManager = $registry->entityManager;
 	}
@@ -27,7 +27,7 @@ class App_Dao_PermissionDao {
 	}
 	
 	public function getByUser($userId){
-		$query = $this->_entityManager->createQuery("SELECT P FROM App_Model_Permission p WHERE p._user = '" . $userId . "'");
+		$query = $this->_entityManager->createQuery("SELECT p FROM App_Model_Permission p WHERE p._user = '" . $userId . "'");
 		return $query->getResult();
 	}
 	
