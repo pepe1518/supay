@@ -19,7 +19,8 @@ class ProjectController extends Zend_Controller_Action
 
     public function addAction()
     {
-        // action body
+        $form = new App_Form_ProjectForm();
+		$this->view->form = $form;
     }
 
 

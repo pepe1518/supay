@@ -1,4 +1,10 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Project</b> and script/action name <b>add</b></p>
+<?php echo $this->infoMenu(); ?>
+<div id="content">
+	<div class="wrap clearFix">
+		<?php echo $this->userMenu(); ?>
+		<div class="col floatLeft">
+			<h2> Nuevo Proyecto</h2>
+			<?php echo $this->form; ?>
+		</div>
+	</div>
 </div>

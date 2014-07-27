@@ -22,6 +22,7 @@
       <formsDirectory>
         <formFile formName="User"/>
         <formFile formName="LoginForm"/>
+        <formFile formName="ProjectForm"/>
       </formsDirectory>
       <layoutsDirectory enabled="false"/>
       <modelsDirectory>

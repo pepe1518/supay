@@ -46,7 +46,7 @@ class App_Model_Project
      * 
      * @column(name="description", type="string", length=250, nullable=true)
      */
-    private $_description;
+    private $_projectDescription;
     
     /**
      * 
