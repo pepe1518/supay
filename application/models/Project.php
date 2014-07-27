@@ -18,7 +18,7 @@ class App_Model_Project
     /**
      * @var integer
      * 
-     * @Column(name="id_git", type="integer", nullable=false)
+     * @Column(name="id_git", type="integer", nullable=true)
      */
     private $_idGit;
 
@@ -97,6 +97,12 @@ class App_Model_Project
         $this->_path = $path;
     }
     
+	public function setName($name) {
+		$this->_name = $name;
+	}
+	public function setDescription($description) {
+		$this->_projectDescription = $description;
+	}
     public function toArray()
     {
 	return get_object_vars($this);		

@@ -7,6 +7,9 @@
  */
 class App_Model_Permission
 {
+	const PERMISSION_ALL = "all";
+	const PERMISSION_READ = "read";
+	const PERMISSION_WRITE = "write";
 	/**
 	 * @var integer
 	 * 

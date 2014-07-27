@@ -7,6 +7,7 @@
  */
 class App_Model_Branch
 {
+	const BRANCH_MASTER = "master";
     /**
      * @var integer
      *
@@ -45,6 +46,9 @@ class App_Model_Branch
      */
     private $_creationDate;
     
+	public function __construct() {
+		$this->_creationDate = new Zend_Date();
+	}
     public function getProject() {
         return $this->_project;
     }
@@ -53,7 +57,18 @@ class App_Model_Branch
         $this->_project = $project;
     }
     
-    public function toArrar() {
+	public function setOwner($owner) {
+		$this->_owner = $owner;
+	}
+	
+	public function setName($name) {
+		$this->_name = $name;
+	}
+	
+	public function getDate() {
+		return $this->_creationDate;
+	}
+    public function toArrary() {
         return get_object_vars($this);        
     }
 }

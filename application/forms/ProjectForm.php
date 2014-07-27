@@ -13,7 +13,10 @@ class App_Form_ProjectForm extends Zend_Form
 			 
 		$projectDescription = new Zend_Form_Element_TextArea('_projectDescription');
 		$projectDescription->setLabel('Descripcion del Proyecto: ')
-						  ->setRequired(FALSE);
+						  ->setRequired(FALSE)
+						  ->setAttrib("cols", "40")
+		->setAttrib("rows", "5");
+						  
 		$file = new Zend_Form_Element_File('enviar');
 		$file->setLabel('Subir Archivo: *')->setRequired(TRUE);
 		

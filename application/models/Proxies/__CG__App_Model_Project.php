@@ -84,6 +84,18 @@ class App_Model_Project extends \App_Model_Project implements \Doctrine\ORM\Prox
         return parent::setPath($path);
     }
 
+    public function setName($name)
+    {
+        $this->__load();
+        return parent::setName($name);
+    }
+
+    public function setDescription($description)
+    {
+        $this->__load();
+        return parent::setDescription($description);
+    }
+
     public function toArray()
     {
         $this->__load();
@@ -93,7 +105,7 @@ class App_Model_Project extends \App_Model_Project implements \Doctrine\ORM\Prox
 
     public function __sleep()
     {
-        return array('__isInitialized__', '_id', '_idGit', '_name', '_accessType', '_description', '_path', '_owner', '_branchs');
+        return array('__isInitialized__', '_id', '_idGit', '_name', '_accessType', '_projectDescription', '_path', '_owner', '_branchs');
     }
 
     public function __clone()

@@ -10,7 +10,7 @@ class App_Dao_ProjectDao {
     
     public function save(App_Model_Project $project) {
         $this->_entityManager->persist($project);
-        $this->_entityManager->flush;
+        $this->_entityManager->flush();
     }
     
     public function remove(App_Model_Project $project) {
