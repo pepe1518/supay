@@ -96,6 +96,12 @@ class App_Model_Project extends \App_Model_Project implements \Doctrine\ORM\Prox
         return parent::setDescription($description);
     }
 
+    public function getName()
+    {
+        $this->__load();
+        return parent::getName();
+    }
+
     public function toArray()
     {
         $this->__load();

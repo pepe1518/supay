@@ -12,9 +12,10 @@ class PruebaController extends Zend_Controller_Action
     {
         echo "hola vamos a probar funciones de shell";
 		
-		exec('"C:\Program Files\Git\bin\sh.exe" --login -i');
+		//exec('"C:\Program Files\Git\bin\sh.exe" --login -i');
 		
 		$salida = exec('mkdir ..\gits\liz.git');
+		exec('git init --bare');
 
 		$this->view->salida = $salida;
     }

@@ -29,6 +29,8 @@ class ProjectController extends Zend_Controller_Action
 				$project = new App_Model_Project();
 				$project->setName($formData['_name']);
 				$project->setDescription($formData['_projectDescription']);
+				
+				$this->newFile($project->getName());
 				//TODO: aqui crear al archivo en .zip subirlo, decomprimirlo y usar el nombre de d ese archivo
 				//para crear el nuevo repositorio vacio y guardar
 				$ownerDao = new App_Dao_UserDao();
@@ -44,7 +46,7 @@ class ProjectController extends Zend_Controller_Action
 				$branch->setOwner($owner);
 				$branch->setProject($project);
 				
-				echo $branch->getDate();
+				//echo $branch->getDate();
 				//branch save
 				$branchDao = new App_Dao_BranchDao();
 				$branchDao->save($branch);
@@ -65,7 +67,15 @@ class ProjectController extends Zend_Controller_Action
 		$this->view->form = $form;
     }
 
-
+	private function newFile($name) {
+		//crea el archivo base del repositorio en el servidor e lo inicializa
+		$path = "..\gits\\" . $name . '.git';
+		$instruction = 'mkdir '.$path;
+ 		exec($instruction);
+		//echo 'cd '.$path .' && "C:\Program Files\Git\bin\sh.exe" --login -i && git init --bare'; die;
+		exec('cd '.$path .' && "C:\Program Files\Git\bin\sh.exe" --login -i && git init --bare');
+		//exec('cd '. $path);
+		//exec('git init --bare');
+	}
 }
-
 
