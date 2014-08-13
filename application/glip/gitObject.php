@@ -18,7 +18,7 @@
  * along with glip.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class GitObject
+class App_Glip_GitObject
 {
     /**
      * @brief (Git) The repository this object belongs to.

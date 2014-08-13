@@ -18,7 +18,7 @@
  * along with glip.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class GitCommitStamp
+class App_Glip_GitCommitStamp
 {
     public $name;
     public $email;

@@ -18,9 +18,9 @@
  * along with glip.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require_once('git_object.class.php');
+//require_once('git_object.class.php');
 
-class GitBlob extends GitObject
+class App_Glip_GitBlob extends App_Glip_GitObject
 {
     /**
      * @brief The data contained in this blob.
@@ -29,7 +29,7 @@ class GitBlob extends GitObject
 
     public function __construct($repo)
     {
-	parent::__construct($repo, Git::OBJ_BLOB);
+	parent::__construct($repo, App_Glip_Git::OBJ_BLOB);
     }
 
     public function _unserialize($data)
