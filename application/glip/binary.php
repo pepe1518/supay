@@ -22,7 +22,7 @@
  * along with glip.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-final class Binary
+final class App_Glip_Binary
 {
     static public function uint16($str, $pos=0)
     {
@@ -39,12 +39,12 @@ final class Binary
     {
         $r = array();
         for ($i = 0; $i < $n; $i++, $pos += 4)
-            $r[] = Binary::uint32($str, $pos);
+            $r[] = self::uint32($str, $pos);
         return $r;
     }
 
-    static public function fuint32($f) { return Binary::uint32(fread($f, 4)); }
-    static public function nfuint32($n, $f) { return Binary::nuint32($n, fread($f, 4*$n)); }
+    static public function fuint32($f) { return self::uint32(fread($f, 4)); }
+    static public function nfuint32($n, $f) { return self::nuint32($n, fread($f, 4*$n)); }
 
     static public function git_varint($str, &$pos=0)
     {

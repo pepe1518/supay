@@ -168,7 +168,7 @@ class App_Glip_GitCommit extends App_Glip_GitObject
 
     static public function treeDiff($a, $b)
     {
-        return GitTree::treeDiff($a ? $a->getTree() : NULL, $b ? $b->getTree() : NULL);
+        return App_Glip_GitTree::treeDiff($a ? $a->getTree() : NULL, $b ? $b->getTree() : NULL);
     }
 }
 

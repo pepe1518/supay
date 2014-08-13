@@ -115,13 +115,13 @@ class App_Glip_Git
         {
             $cur = 0;
             fseek($f, $offset);
-            $after = Binary::fuint32($f);
+            $after = App_Glip_Binary::fuint32($f);
         }
         else
         {
             fseek($f, $offset + (ord($object_name{0}) - 1)*4);
-            $cur = Binary::fuint32($f);
-            $after = Binary::fuint32($f);
+            $cur = App_Glip_Binary::fuint32($f);
+            $after = App_Glip_Binary::fuint32($f);
         }
 
         return array($cur, $after);
@@ -159,7 +159,7 @@ class App_Glip_Git
                 fseek($index, 4*256 + 24*$cur);
                 for ($i = 0; $i < $n; $i++)
                 {
-                    $off = Binary::fuint32($index);
+                    $off = App_Glip_Binary::fuint32($index);
                     $name = fread($index, 20);
                     if ($name == $object_name)
                     {
@@ -172,7 +172,7 @@ class App_Glip_Git
             else
             {
                 /* version 2+ */
-                $version = Binary::fuint32($index);
+                $version = App_Glip_Binary::fuint32($index);
                 if ($version == 2)
                 {
                     list($cur, $after) = $this->readFanout($index, $object_name, 8);
@@ -181,7 +181,7 @@ class App_Glip_Git
                         continue;
 
                     fseek($index, 8 + 4*255);
-                    $total_objects = Binary::fuint32($index);
+                    $total_objects = App_Glip_Binary::fuint32($index);
 
                     /* look up sha1 */
                     fseek($index, 8 + 4*256 + 20*$cur);
@@ -195,7 +195,7 @@ class App_Glip_Git
                         continue;
 
                     fseek($index, 8 + 4*256 + 24*$total_objects + 4*$i);
-                    $off = Binary::fuint32($index);
+                    $off = App_Glip_Binary::fuint32($index);
                     if ($off & 0x80000000)
                     {
                         /* packfile > 2 GB. Gee, you really want to handle this
@@ -227,8 +227,8 @@ class App_Glip_Git
     {
         $pos = 0;
 
-        $base_size = Binary::git_varint($delta, $pos);
-        $result_size = Binary::git_varint($delta, $pos);
+        $base_size = App_Glip_Binary::git_varint($delta, $pos);
+        $result_size = App_Glip_Binary::git_varint($delta, $pos);
 
         $r = '';
         while ($pos < strlen($delta))
@@ -282,7 +282,8 @@ class App_Glip_Git
         }
 
         /* compare sha1_file.c:1608 unpack_entry */
-        if ($type == Git::OBJ_COMMIT || $type == Git::OBJ_TREE || $type == Git::OBJ_BLOB || $type == Git::OBJ_TAG)
+        if ($type == App_Glip_Git::OBJ_COMMIT || $type == App_Glip_Git::OBJ_TREE || 
+        	$type == App_Glip_Git::OBJ_BLOB || $type == App_Glip_Git::OBJ_TAG)
         {
             /*
              * We don't know the actual size of the compressed
@@ -294,7 +295,7 @@ class App_Glip_Git
              */
             $data = gzuncompress(fread($pack, $size+512), $size);
         }
-        else if ($type == Git::OBJ_OFS_DELTA)
+        else if ($type == App_Glip_Git::OBJ_OFS_DELTA)
         {
             /* 20 = maximum varint length for offset */
             $buf = fread($pack, $size+512+20);
@@ -323,7 +324,7 @@ class App_Glip_Git
 
             $data = $this->applyDelta($delta, $base);
         }
-        else if ($type == Git::OBJ_REF_DELTA)
+        else if ($type == App_Glip_Git::OBJ_REF_DELTA)
         {
             $base_name = fread($pack, 20);
             list($type, $base) = $this->getRawObject($base_name);
@@ -374,7 +375,7 @@ class App_Glip_Git
 
             /* check magic and version */
             $magic = fread($pack, 4);
-            $version = Binary::fuint32($pack);
+            $version = App_Glip_Binary::fuint32($pack);
             if ($magic != 'PACK' || $version != 2)
                 throw new Exception('unsupported pack format');
 
@@ -396,7 +397,7 @@ class App_Glip_Git
     public function getObject($name)
     {
 	list($type, $data) = $this->getRawObject($name);
-	$object = GitObject::create($this, $type);
+	$object = App_Glip_GitObject::create($this, $type);
 	$object->unserialize($data);
 	assert($name == $object->getName());
 	return $object;

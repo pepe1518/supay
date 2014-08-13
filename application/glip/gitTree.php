@@ -23,7 +23,7 @@ class GitTreeInvalidPathError extends GitTreeError {}
 
 require_once('git_object.class.php');
 
-class App_Glip_GitTree extends GitObject
+class App_Glip_GitTree extends App_Glip_GitObject
 {
     public $nodes = array();
 
@@ -102,7 +102,7 @@ class App_Glip_GitTree extends GitObject
         else
         {
             $cur = $this->repo->getObject($cur);
-            if (!($cur instanceof GitTree))
+            if (!($cur instanceof App_Glip_GitTree))
                 throw new GitTreeInvalidPathError;
             return $cur->find($path);
         }
