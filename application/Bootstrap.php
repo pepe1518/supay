@@ -70,5 +70,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
         return $entityManager;
     }
+    
+    public function _initGeshi() {
+    	require_once('geshi/geshi.php');
+    }
 }
 
