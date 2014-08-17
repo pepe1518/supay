@@ -48,6 +48,11 @@ class JoetestsController extends Zend_Controller_Action
 		// And echo the result!//
 		echo $geshi->parse_code();
 	}
+	
+	public function jstreeAction()
+	{
+		
+	}
 }
 
 
