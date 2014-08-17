@@ -20,6 +20,7 @@ class PruebaController extends Zend_Controller_Action
 		//exec('git init --bare');
 
 		$this->view->salida = $salida;
+		echo "lalalala";
 		
     }
 
