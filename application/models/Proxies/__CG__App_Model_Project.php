@@ -42,6 +42,18 @@ class App_Model_Project extends \App_Model_Project implements \Doctrine\ORM\Prox
     }
 
     
+    public function getId()
+    {
+        $this->__load();
+        return parent::getId();
+    }
+
+    public function getDescription()
+    {
+        $this->__load();
+        return parent::getDescription();
+    }
+
     public function getBranchs()
     {
         $this->__load();

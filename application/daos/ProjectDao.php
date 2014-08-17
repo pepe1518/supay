@@ -31,4 +31,13 @@ class App_Dao_ProjectDao {
         $query = $this->_entityManager->createquery("SELECT p FROM App_Model_Project p WHERE p._owner = '" . $idOwner . "'");
         return $query->getResult();
     }
+	
+	public function getAllLimitOffset($limit, $offset)
+	{
+		$query = $this->_entityManager->createQuery('SELECT p FROM App_Model_Project p')
+								->setFirstResult($offset)
+								->setMaxResults($limit);
+		
+		return $query->getResult();
+	}
 }

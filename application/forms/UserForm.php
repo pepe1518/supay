@@ -12,15 +12,15 @@ class App_Form_UserForm extends Zend_Form
 		$username->setLabel("Usuario:");
 		$username->setRequired(true);
 
-                $password = new Zend_Form_Element_Password('_password');
+        $password = new Zend_Form_Element_Password('_password');
 		$password->setLabel("Contrasena:");
 		$password->setRequired(true);
                 
-                $name = new Zend_Form_Element_Text('_name');
-                $name->setLabel('Nombre:');
-                $name->setRequired(true);
+        $name = new Zend_Form_Element_Text('_name');
+        $name->setLabel('Nombre:');
+        $name->setRequired(true);
                 
-                $email = new Zend_Form_Element_Text('_email');
+        $email = new Zend_Form_Element_Text('_email');
 		$email->setLabel("E-mail:");
 		$email->setRequired(true);
 

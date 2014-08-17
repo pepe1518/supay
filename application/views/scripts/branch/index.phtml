@@ -1,0 +1,38 @@
+<?php echo $this->infoMenu(); ?>
+<div id="content">
+  <div class="wrap clearFix">
+      <?php echo $this->userMenu();  ?>
+      <br />
+      <h2>Listado de Ramas</h2>
+      <table class="col">
+      	<thead>
+      		<tr>
+      			<th>Numero</th>
+      			<th>Nombre de la Rama</th>
+      			<th>Autor</th>
+      			<th>Ultimo Cambio</th>
+      			<th>Acciones</th>
+      		</tr>
+      	</thead>
+      	<tbody>
+      	<?php foreach($this->branchs as $branch) { 
+      			if($branch->getProject()->getId() == $this->id) {
+      	?>
+    		<tr>
+    			<td><?php echo $branch->getId(); ?></td>
+    			<td><a href='<?php echo $this->url(array('controller' => 'branch',
+										 		 'action'     => 'hash',
+												 'id'     	  => $branch->getProject()->getId(),
+										), 'default', true) . "'>".$branch->getName() ?></a></td>
+    			<td><?php echo $branch->getOwner()->getName(); ?></td>
+    			<td><?php echo $branch->getDate()->format("d-m-Y"); ?></td>
+    			<td><a href='<?php echo $this->url(array('controller' => 'branch',
+										 		 'action'     => 'add',
+												 'id'     	  => $branch->getProject()->getId(),
+										), 'default', true) . "'>Nueva Rama" ?></a></td>
+    		</tr>  		
+      	</tbody>
+      	<?php }  } //end foreach?>
+	</table>
+	</div>
+</div>      	

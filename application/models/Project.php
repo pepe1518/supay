@@ -70,6 +70,13 @@ class App_Model_Project
      * 
      * @return App_Model_Branch[]
      */
+    
+    public function getId() {
+    	return $this->_id;
+    }
+	public function getDescription() {
+		return $this->_projectDescription;
+	}
     public function getBranchs() {
         return $this->_branchs;
     }

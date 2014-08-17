@@ -35,4 +35,13 @@ class App_Dao_PermissionDao {
 		$query = $this->_entityManager->createQuery("SELECT p FROM App_Model_Permission p WHERE p._project ='".$projectId."'");
 		return $query->getResult();
 	}
+	
+	public function getAllLimitOffset($limit, $offset)
+	{
+		$query = $this->_entityManager->createQuery('SELECT p FROM App_Model_Permission p')
+								->setFirstResult($offset)
+								->setMaxResults($limit);
+		
+		return $query->getResult();
+	}
 }

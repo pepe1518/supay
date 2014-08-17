@@ -8,6 +8,7 @@
 class App_Model_Branch
 {
 	const BRANCH_MASTER = "master";
+	
     /**
      * @var integer
      *
@@ -28,8 +29,8 @@ class App_Model_Branch
     /**
      * @var App_Model_User
      * 
-     * @OneToOne(targetEntity="App_Model_User")
-     * @JoinColumn(name="id_user", referencedColumnName="id")
+     * @ManyToOne(targetEntity="App_Model_User")
+     * @JoinColumn(name="id_user", referencedColumnName="id", nullable=true)
      */
     private $_owner;
     /**
@@ -47,12 +48,21 @@ class App_Model_Branch
     private $_creationDate;
     
 	public function __construct() {
-		$this->_creationDate = new Zend_Date();
+		$this->_creationDate = new DateTime();
 	}
+    public function getId() {
+    	return $this->_id;
+    }
     public function getProject() {
         return $this->_project;
     }
-    
+    public function getName() {
+    	return $this->_name;
+    }
+	public function getOwner(){
+		return $this->_owner;
+	}
+
     public function setProject(App_Model_Project $project) {
         $this->_project = $project;
     }

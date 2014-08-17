@@ -21,11 +21,17 @@
         <controllerFile controllerName="Prueba">
           <actionMethod actionName="index"/>
         </controllerFile>
+        <controllerFile controllerName="Branch">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="add"/>
+          <actionMethod actionName="hash"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory>
         <formFile formName="User"/>
         <formFile formName="LoginForm"/>
         <formFile formName="ProjectForm"/>
+        <formFile formName="AddBranchForm"/>
       </formsDirectory>
       <layoutsDirectory enabled="false"/>
       <modelsDirectory>
@@ -33,6 +39,7 @@
         <modelFile modelName="Project"/>
         <modelFile modelName="Branch"/>
         <modelFile modelName="Permission"/>
+        <modelFile modelName="Commit"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
@@ -55,6 +62,15 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Prueba">
             <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Branch">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Branch">
+            <viewScriptFile forActionName="add"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Branch">
+            <viewScriptFile forActionName="hash"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
@@ -102,6 +118,11 @@
           </testApplicationControllerFile>
           <testApplicationControllerFile forControllerName="Prueba">
             <testApplicationActionMethod forActionName="index"/>
+          </testApplicationControllerFile>
+          <testApplicationControllerFile forControllerName="Branch">
+            <testApplicationActionMethod forActionName="index"/>
+            <testApplicationActionMethod forActionName="add"/>
+            <testApplicationActionMethod forActionName="hash"/>
           </testApplicationControllerFile>
         </testApplicationControllerDirectory>
       </testApplicationDirectory>

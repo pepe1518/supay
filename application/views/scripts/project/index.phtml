@@ -13,21 +13,21 @@
       			<th>Acciones</th>
       		</tr>
       	</thead>
-      	<?php
-      		if($this->allPermissions){
-      		foreach($this->allPermissions as $permission) {
-      			$project = $permission->getProject();
+      	<?php 
+      		foreach($this->projects as $permission) {
+               if($permission->getOwner()->getId() == $this->id) {
+
       	?>
       	<tr>
-      		<td><?php echo $project->getId(); ?></td>
-      		<td><a href='<?php echo $this->url(array('controller' => '',
-										 		 'action'     => '',
-												 'id'     	  => $project->getId(),
-										), 'default', true) . "'>".  $project->getName(); ?></a></td>
-      		<td><?php echo $project->getDescription(); ?></td>
+      		<td><?php echo $permission->getId(); ?></td>
+      		<td><a href='<?php echo $this->url(array('controller' => 'branch',
+										 		 'action'     => 'index',
+												 'id'     	  => $permission->getId(),
+										), 'default', true) . "'>".  $permission->getName(); ?></a></td>
+      		<td><?php echo $permission->getDescription(); ?></td>
       		<td>aqui vienen las acciones</td>
       	</tr>      	
-      	<?php  } } //end foreach ?>
+      	<?php  }}  //end foreach ?>
       </table>
   </div>
 </div>
