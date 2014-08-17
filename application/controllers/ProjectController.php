@@ -36,25 +36,17 @@ class ProjectController extends Zend_Controller_Action
                  $project->setPath($path);
                  $instruction = 'mkdir '.$path;
                  shell_exec($instruction);
-                                
-                                
-				//TODO: aqui crear al archivo en .zip subirlo, decomprimirlo y usar el nombre de d ese archivo
-				//para crear el nuevo repositorio vacio y guardar
+
 				$ownerDao = new App_Dao_UserDao();
 				$owner = $ownerDao->getById($id);
 				$project->setOwner($owner);
 				
-				//TODO:guarda el objeto Project pero antes se tiene que crear una version y un nuevo repo 
-				
-                shell_exec("git init $path --bare");
+		        shell_exec("git init $path --bare");
                 $projectDao->save($project); 
 				
-				shell_exec("git clone $path");
-				shell_exec("git init $project->getName()");
-				//TODO: fatla que se puewdad copiar los archivos a almeacenar
+				//shell_exec("git clone $path");
+				//shell_exec("git init $project->getName()");
 				
-				
-				//TODO:creando junto al incio dle proyecto la rama principal que sera master
 				$branch = new App_Model_Branch();
                 $branch->setName(App_Model_Branch::BRANCH_MASTER);
                 $branch->setOwner($owner);
@@ -62,10 +54,6 @@ class ProjectController extends Zend_Controller_Action
 				
 				$project->addBranch($branch);
 				
-				//echo $branch->getDate();
-				//branch save
-				
-				//creando los permisos para el proyecto como es el dueño tendra todos los permisos
 				$permitDao = new App_Dao_PermissionDao();
 				$permit = new App_Model_Permission();
 				$permit->setCollabollator($owner);
@@ -76,8 +64,16 @@ class ProjectController extends Zend_Controller_Action
 				$branchDao = new App_Dao_BranchDao();
                	$branchDao->save($branch);
 				$projectDao->save($project); 
-				//save permissions
 				
+				shell_exec('mkdir master');
+				shell_exec('cd master; git clone ' . $project->getPath());
+				shell_exec('cd master\ & git init \\'.$project->getName());
+				
+				//TODO: aqui poner la descompresion del archivo para hacer el primer commit
+				//los comando son los siguientes:
+				//shell_exec('git add .');
+				//shell_exec('git commi -m "primer commit generico para todos los proyectos"');
+				//shell_exec('git push origin master');			
 				$this->_helper->redirector('index');
 				return;
 				
