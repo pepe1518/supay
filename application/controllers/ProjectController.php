@@ -57,7 +57,7 @@ class ProjectController extends Zend_Controller_Action
 				//y despues hacer el primer commit
 				shell_exec("cd $branchPath & git add .");
 				shell_exec('cd $branchPath & git commit -m "commit inicial del proyecto"');
-				//shell_exec("cd $branchPath & git push -u origin master");
+				shell_exec("cd $branchPath & git push -u origin master");
 				$project->addBranch($branch);
 				
 				$permitDao = new App_Dao_PermissionDao();
@@ -71,7 +71,7 @@ class ProjectController extends Zend_Controller_Action
 				$branchDao = new App_Dao_BranchDao();
                	$branchDao->save($branch);
 				
-				$ruta = $project->getPath(); 
+				//$ruta = $project->getPath(); 
 
 				//$projectDao->save($project); 		
 				$this->_helper->redirector('index');

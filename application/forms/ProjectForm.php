@@ -23,5 +23,18 @@ class App_Form_ProjectForm extends Zend_Form
 		$submit = new Zend_Form_Element_Submit('submit', array('label' => 'Crear Nuevo Proyecto'));
 			 
 		$this->addElements(array($name, $projectDescription, $file, $submit));
+	
+	
+	/*$upload = new Zend_File_Transfer_Adapter_Http();
+	$upload->setDestination(APPLICATION_PATH.'/master/');
+	//$upload->setDestination($path);
+	try {
+
+		$upload->receive();
+		//Zend_Debug::dump($upload->getFileInfo());
+	} catch (Zend_File_Transfer_Exception $e) {
+		echo $e->message();
+
+	}*/
 	}
 }
