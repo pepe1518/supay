@@ -46,9 +46,22 @@ class App_Model_Branch
      * @Column(name="creaction_date", type="datetime", nullable=true)
      */
     private $_creationDate;
+	
+	/**
+	 * @var string
+	 * 
+	 * @Column(name="path", type="string", nullable=true)
+	 */
+	 private $_path;
     
 	public function __construct() {
 		$this->_creationDate = new DateTime();
+	}
+	public function getPath() {
+		return $this->_path;
+	}
+	public function setPath($path) {
+		$this->_path = $path;
 	}
     public function getId() {
     	return $this->_id;

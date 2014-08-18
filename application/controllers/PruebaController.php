@@ -16,11 +16,13 @@ class PruebaController extends Zend_Controller_Action
 		
 		// exec('"C:\Program Files\Git\bin\sh.exe" --login -i');
 		
-		$salida = shell_exec('git init ../gits/ceci1.git --bare');
+		//$salida = shell_exec('git init ../gits/ceci1.git --bare');
 		//exec('git init --bare');
-
+		$salida = shell_exec('mkdir nombre & cd nombre & git init --bare');
+		
 		$this->view->salida = $salida;
-		echo "lalalala kajsdksajda";
+		//echo "lalalala kajsdksajda";
+		
 		
     }
 
