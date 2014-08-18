@@ -8,37 +8,48 @@
 
 <script>
 $(function () {
-	$('#jstree').jstree();
+	
+	$('#jstree').jstree({ 'core' : {
+		'data' : [
+			  		<?php echo $this->fileTreeString; ?>
+		],
+	    "plugins" : [ "sort" ]
+	}});
 
-    // Bind to events triggered on the tree
-    $('#jstree').on("changed.jstree", function (e, data) {
-        console.log(data.selected);
-    });
+	$(document).on('click', "a", function () {
+		var href = $(this).attr('href');
+		
+		if(href != '#' || href != '' )
+		{
+			var rootPath = $('#SYSTEM_ROOT_PATH').val();
 
-    $('button').on('click', function () {
-        $('#jstree').jstree(true).select_node('child_node_1');
-        $('#jstree').jstree('select_node', 'child_node_1');
-        $.jstree.reference('#jstree').select_node('child_node_1');
-    });
+			$.ajax({
+		        url: rootPath + "joetests/ajaxgeshi",
+		        type: 'POST',
+		        async: 'false',
+				data: { filePath: href},
+		        success: function(text_data)
+				{
+					$('#doc_content').html(text_data);
+		        },
+		        error: function(request, textStatus, errorThrown)
+				{
+		            var message = (request.status == 403) ? request.responseText : message;
+		            alert("Error ajax: - " + message);
+		        }
+		    });
+		}
+	});
 });
 </script>
 </head>
 
 <body>
 
-<h2>JsTree library test</h2>
+<h2>JsTree & GeShi libraries test</h2>
+<div id="jstree">    
+</div>
 
-  <div id="jstree">
-    <!-- in this example the tree is populated from inline HTML -->
-    <ul>
-      <li>Root node 1
-        <ul>
-          <li id="child_node_1">Child node 1</li>
-          <li>Child node 2</li>
-        </ul>
-      </li>
-      <li>Root node 2</li>
-    </ul>
-  </div>
-  <button>demo button</button>
-
+<h2>Document content</h2>
+<div id="doc_content">    
+</div>

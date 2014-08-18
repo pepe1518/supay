@@ -14,6 +14,8 @@ $session = new Zend_Session_Namespace('systemSession');
         echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/main.css');
         echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/print.css', 'supay');       	      
         echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery-ui-1.8.13.custom.min.js', 'text/javascript');
+        
+        echo "<input type='hidden' id='SYSTEM_ROOT_PATH' value='http://$_SERVER[HTTP_HOST]" . $this->baseUrl() ."/'/>";
         ?>
 </head>
 
