@@ -35,6 +35,13 @@ class BranchController extends Zend_Controller_Action
 				$branch->setOwner($owner);
 				$project->addBranch($branch);
 				
+				$path =  APPLICATION_PATH . "\\".$branch->getName() ."\\" . $project->getName();
+				$branch->setPath($path);
+				
+				set_time_limit(0);
+				shell_exec("mkdir $path");
+				@shell_exec(" git clone  ".$project->getPath()." $path");
+				
 				$branchDao = new App_Dao_BranchDao();
 				$branchDao->save($branch);
 				
@@ -49,7 +56,26 @@ class BranchController extends Zend_Controller_Action
 
     public function hashAction()
     {
-        // action body
+        $id = $this->_getParam('id');
+		
+		$projectDao = new App_Dao_ProjectDao();
+		$project = $projectDao->getById($id);
+		
+		$repo = new App_Glip_Git($project->getPath());
+		$master_name = $repo->getTip('master');
+		$master = $repo->getObject($master_name);	
+		
+		$commit = new App_Glip_GitCommit($project->getPath());
+		
+		$logs = shell_exec("cd ".$project->getPath(). " & git log --pretty=format:%h");
+		$hashs = preg_split('/\s/', $logs);
+		
+		foreach ($hashs as $hash) {
+			$repo = $repo = new App_Glip_Git($project->getPath());
+			$object = $repo->getObject(sha1_bin($hash));
+			Zend_Debug::dump($object);
+		}
+		
     }
 
 

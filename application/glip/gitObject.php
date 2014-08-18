@@ -53,11 +53,11 @@ class App_Glip_GitObject
     static public function create($repo, $type)
     {
 	if ($type == App_Glip_Git::OBJ_COMMIT)
-	    return new GitCommit($repo);
+	    return new App_Glip_GitCommit($repo);
 	if ($type == App_Glip_Git::OBJ_TREE)
-	    return new GitTree($repo);
+	    return new App_Glip_GitTree($repo);
 	if ($type == App_Glip_Git::OBJ_BLOB)
-	    return new GitBlob($repo);
+	    return new App_Glip_GitBlob($repo);
 	throw new Exception(sprintf('unhandled object type %d', $type));
     }
 

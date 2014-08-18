@@ -1,0 +1,205 @@
+[33mcommit 47ca5ec3a429751575354bcccd89dbe33413615b[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Sun Aug 17 20:54:13 2014 -0430
+
+    cambios ropuestos por jona
+
+[33mcommit b97cdd57dff3997e9dc27bbe027a5b14d5399651[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Sun Aug 17 20:30:14 2014 -0430
+
+    a medio subir files
+
+[33mcommit 88f780da52ee0122225c149ce54821ee496f8f1a[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Sun Aug 17 05:12:00 2014 -0430
+
+    cambios sonre el uso de repos
+
+[33mcommit 858ea76674d5313f91e0832ccf2814692f2e3ddb[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Sun Aug 17 03:19:49 2014 -0430
+
+    eliminando archivos de prueba
+
+[33mcommit 7767998040dd851556a986228b6c5324dc3f7286[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Sun Aug 17 03:08:31 2014 -0430
+
+    borrando
+
+[33mcommit 183bfe2c9474d53574614dee47df41ddbfb0792e[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Sun Aug 17 02:53:22 2014 -0430
+
+    lalala prueba
+
+[33mcommit c2c2b7d6a43e6bd18fb3669dd17eb057970f1fa5[m
+Author: unknown <Usuario@Windows.(none)>
+Date:   Sun Aug 17 02:13:46 2014 -0430
+
+    estrutura general del proyecto
+
+[33mcommit f8979bc0a4cf2050004786fd107a54225cbf25ff[m
+Author: Joe Wallace <cyberflaco@gmail.com>
+Date:   Sun Aug 17 00:45:13 2014 -0400
+
+    Adding GeShi (Generic Syntax Highlighter)
+    Adding Geshi test example
+
+[33mcommit 4cceef51a922383eaa06bf0726f6298775413911[m
+Author: Joe Wallace <cyberflaco@gmail.com>
+Date:   Sat Aug 16 23:52:19 2014 -0400
+
+    Updating git ignore file.
+
+[33mcommit 820264846777a8e80635350c75ce16947fa00b30[m
+Author: Joe Wallace <cyberflaco@gmail.com>
+Date:   Sat Aug 16 23:50:53 2014 -0400
+
+    DB script.
+
+[33mcommit beddfef3c39bef24162e59d55b5bac36638cdfd5[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Wed Aug 13 11:21:00 2014 -0400
+
+    mas sobre libreria glip
+
+[33mcommit f40abc8747a38630277adb474e88222c1a568cb3[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Wed Aug 13 10:36:34 2014 -0400
+
+    adaptacion de glip
+
+[33mcommit 4f85c62c042be56bda766585eb45584d7b649864[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Tue Aug 12 21:43:09 2014 -0400
+
+    funciones de exec
+
+[33mcommit 8195138ac2c738ab0f0a9488f039f64ea1fba793[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Tue Jul 29 22:35:24 2014 -0400
+
+    [controlador de prueba] creando un controlador para hacer pruebas sobre distintas funcionalidades
+
+[33mcommit 71163dcc30a3e35025750eeab1479780b4bb60e0[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Sun Jul 27 02:20:00 2014 -0400
+
+    [crear nuevo proyecto] primer avance de crear un nuevo proyecto falta la interaccion con git por ahoa solo es base de datos
+
+[33mcommit 0277e143d71efddc9d2225e7ed4958658fdadbdc[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Sat Jul 26 21:57:43 2014 -0400
+
+    formulario para la creacion de nuevos proyectos
+
+[33mcommit 4da9f63312d2d192276fc5f76bdae38d831193a3[m
+Merge: eb5f0c2 88f5fb3
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Sat Jul 26 02:14:10 2014 -0400
+
+    Merge branch 'master' of https://github.com/pepe1518/supay
+
+[33mcommit eb5f0c2de034d7ede003ca047fc2da04cca67243[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Sat Jul 26 02:13:22 2014 -0400
+
+    [cambios a errores] cambios menores hechos a errores que tenai pro typeo
+
+[33mcommit 991b7f26a333f12049154931b99fbdcdcf8dd759[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Sat Jul 26 01:41:23 2014 -0400
+
+    [llamado a los projects] distinta manera de hacer el llamado a los proyectos de cada usuario
+
+[33mcommit 88f5fb3ec4ffb70fa856dec0d07d7d45e2f704be[m
+Author: Jose Valdivia <pepe1518@gmail.com>
+Date:   Sat Jul 26 01:07:07 2014 -0400
+
+    Create README.md
+
+[33mcommit 9fbfb38ed013577cf938a650651dbbf9fab11a9b[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Sat Jul 26 00:35:15 2014 -0400
+
+    modificaciones a la relacion entre user y projectos
+
+[33mcommit a78ca2735c01e74dc56635e8c8d366c055e8a90e[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Fri Jul 25 17:34:42 2014 -0400
+
+    cambios despues de much o tiempo, ahora si a continuar
+
+[33mcommit f092b7d9567b77f4049ec93f3c844e7362b2bd6b[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Wed Jul 23 00:24:29 2014 -0400
+
+    abstract del proyecto
+
+[33mcommit 216ce3e6c19704ca9b4960ee9db0b50399b250ba[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Sat Jul 19 02:12:57 2014 -0400
+
+    mas cambios no recuerdo que hice
+
+[33mcommit 067a378860e66de7b3fe41562a6d0b51b125217e[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Thu Jul 17 20:55:54 2014 -0400
+
+    cambios para demostracion para ceci
+
+[33mcommit a59141a5f48383728ad2520cbfa4cfa33400533e[m
+Author: cahirulo <pepe1518@gmail.com>
+Date:   Thu Jul 17 20:20:47 2014 -0400
+
+    primeras adaptaciones a la libreria GLIP
+
+[33mcommit 289277a8e96b244e02482f9b9a73c9b9adaf7b94[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Wed Jul 16 15:27:42 2014 -0400
+
+    agregando daos y el controlador de project
+
+[33mcommit 591e042e06ac1491329dc05832c7e2adcf501360[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Wed Jul 16 03:17:13 2014 -0400
+
+    apprgando modelos para manejos de proyectos y sus respectivas ramas
+
+[33mcommit edc4186d6542629b87fef917688ec18fb6a2dc9a[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Tue Jul 15 18:49:03 2014 -0400
+
+    cambios en la consulta dql para acceder y controlar las sesiones
+
+[33mcommit a39d0ef383f96c5d091597773c753135288d3e23[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Tue Jul 15 16:39:14 2014 -0400
+
+    agergando libreria glip y manual sobre el mismo
+
+[33mcommit 4a0f22d2a95e314fb2db4884b9fe146947c7a952[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Fri Jul 11 15:49:22 2014 -0400
+
+    manejo de usuarios casi listo
+
+[33mcommit 467995d15113310d92395d871a4724bb6506c6b8[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Thu Jul 10 21:27:10 2014 -0400
+
+    mas configuraciones para empezar el proyecto
+
+[33mcommit 1d7e323edbc326e47b203c4c7f50677938964082[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Thu Jul 10 19:24:02 2014 -0400
+
+    primeras configuraciones del entorno
+
+[33mcommit b5774834c43a97510fc4b40fc4a79a7633a72ad6[m
+Author: pepe1518 <pepe1518@gmail.com>
+Date:   Thu Jul 10 19:12:06 2014 -0400
+
+    hola
