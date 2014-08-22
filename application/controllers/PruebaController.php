@@ -13,6 +13,7 @@ class PruebaController extends Zend_Controller_Action
         	
 		
         //echo "hola vamos a probar funciones de shell";
+<<<<<<< Updated upstream
 		
 		// exec('"C:\Program Files\Git\bin\sh.exe" --login -i');
 		
@@ -20,6 +21,14 @@ class PruebaController extends Zend_Controller_Action
 		//exec('git init --bare');
 		$salida = shell_exec('mkdir nombre & cd nombre & git init --bare');
 		
+=======
+		
+		// exec('"C:\Program Files\Git\bin\sh.exe" --login -i');
+		
+		$salida = shell_exec('git init ../gits/ceci.git --bare');
+		//exec('git init --bare');
+
+>>>>>>> Stashed changes
 		$this->view->salida = $salida;
 		//echo "lalalala kajsdksajda";
 		

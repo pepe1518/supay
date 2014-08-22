@@ -47,6 +47,7 @@ class ProjectController extends Zend_Controller_Action
                 $branch->setName(App_Model_Branch::BRANCH_MASTER);
                 $branch->setOwner($owner);
 				
+<<<<<<< Updated upstream
 				$branchPath = APPLICATION_PATH . "\\".$branch->getName() ."\\" . $project->getName();
 				$branch->setPath($branchPath);
 				
@@ -59,6 +60,12 @@ class ProjectController extends Zend_Controller_Action
 				shell_exec('cd $branchPath & git commit -m "commit inicial del proyecto"');
 				shell_exec("cd $branchPath & git push -u origin master");
 				$project->addBranch($branch);
+=======
+				//echo $branch->getDate();
+				//branch save
+				//$branchDao = new App_Dao_BranchDao();
+				//$branchDao->save($branch);
+>>>>>>> Stashed changes
 				
 				$permitDao = new App_Dao_PermissionDao();
 				$permit = new App_Model_Permission();
@@ -82,5 +89,21 @@ class ProjectController extends Zend_Controller_Action
 		$this->view->form = $form;
     }
 
+<<<<<<< Updated upstream
+=======
+	private function newFile($name) {
+		//crea el archivo base del repositorio en el servidor e lo inicializa
+		$path = "..\gits\\" . $name . '.git';
+		$instruction = 'mkdir '.$path;
+ 		exec($instruction);
+		//echo 'cd '.$path .' && "C:\Program Files\Git\bin\sh.exe" --login -i && git init --bare'; die;
+		//exec('cd '.$path .' && "C:\Program Files\Git\bin\sh.exe" --login -i && git init --bare');
+		//exec('cd '. $path);
+		//exec('git init --bare');
+		//echo shell_exec('"C:\Program Files\Git\bin\sh.exe" --login -i && git init --bare');
+		echo "--------------------------";
+		echo shell_exec('git init');
+	}
+>>>>>>> Stashed changes
 }
 
